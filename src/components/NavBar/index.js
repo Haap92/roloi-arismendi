@@ -23,7 +23,7 @@ const menuItems = [
 const NavBar = () => {
    return (
     <nav style={styles.navbar}>
-      <img style={styles.logo}src={logo} alt="" />
+      <img style={styles.logo}src={logo} alt="Roloi" />
       <div>
         {menuItems.map((item) => (
           <a href="/" style={styles.anchors} key={item.id}>
