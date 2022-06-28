@@ -4,20 +4,24 @@ import logo from "../../assets/images/logo.svg"
 const menuItems = [
     {
       id: "1",
-      label: "ANALOG",
+      label: "HOME",
     },
     {
       id: "2",
-      label: "DIGITAL",
+      label: "ANALOG",
     },
     {
       id: "3",
+      label: "DIGITAL",
+    },
+    {
+      id: "4",
       label: "SMART",
     },
     {
-        id: "4",
-        label: "VINTAGE",
-      },
+      id: "5",
+      label: "VINTAGE",
+    },
   ];
 
 const NavBar = () => {
