@@ -62,7 +62,7 @@ const styles = {
         fontSize: '100%' ,
         color: 'black' ,
         fontFamily: 'Roboto',
-        fontWeight: 'bold' , 
+        fontWeight: 'bold'
     }
 } 
 

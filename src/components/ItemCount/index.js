@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ItemCount = ({name, img, description, initial, stock, onAdd}) => {
+const ItemCount = ({name, initial, stock, onAdd}) => {
     const [count, setCount]=useState(initial)
     const incrementCount = () => {
         if (count < stock) {
@@ -26,10 +26,7 @@ const ItemCount = ({name, img, description, initial, stock, onAdd}) => {
     }
     
   return (
-    <div style={styles.itemCard}>
-        <h3>{name}</h3>
-        <img style={styles.images} src={img} alt= 'img'/>
-        <p style={styles.paragraph}>{description}</p>
+    <div style={styles.ItemCounter}>
         <div style={styles.buttonbar}>
             <button style={styles.minus} onClick={decrementCount}>-</button>
             <span style={styles.counter}>{count}</span>
@@ -41,33 +38,21 @@ const ItemCount = ({name, img, description, initial, stock, onAdd}) => {
 }
 
 const styles ={
-    itemCard:{
-        height: '45%' ,
-        width: '22%' ,
+
+    ItemCounter:{
         display: 'flex',
-        flexDirection: 'column' ,
-        justifyContent: 'space-between',
-        alignItems: 'center',  
-        background: '#D9BEBE', 
-        MarginTop: '10%',
-        margin: '1%',
-        border: '1px',
-        borderRadius: '5px'
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
     },
-    paragraph:{
-        width: '80%',
-        height: '40px',
-        textAlign: 'center'
-    },
-    images:{
-        width:'65%',
-        height: '150px'
-    },
+
     buttonbar:{
         margin: '5%',
         width: '100%',
         display: 'flex',
-        justifyContent: 'space-evenly'
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
     },
     plus:{
         backgroundColor: 'green',
