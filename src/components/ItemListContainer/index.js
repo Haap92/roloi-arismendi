@@ -9,8 +9,8 @@ const ItemListContainer = ({greeting}) => {
     const [loading, setLoading]=useState(true)
     const getProducts = async () => {
         try{
-          const respuesta = await productData
-          setProductList(respuesta)
+          const list = await productData
+          setProductList(list)
         }catch(error){
           console.log(error)
         }finally{

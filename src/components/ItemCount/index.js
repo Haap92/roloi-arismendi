@@ -48,7 +48,7 @@ const styles ={
 
     buttonbar:{
         margin: '5%',
-        width: '100%',
+        width: '50%',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
@@ -66,10 +66,15 @@ const styles ={
         fontSize: '120%'
     },
     adding:{
-        marginBottom: '10%',
+        marginBottom: '5%',
         width: '60%',
-        backgroundColor: 'teal',
-        color: 'white'
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '44px',
+        background: '#CD5C5C',
+        color: 'white',
+        borderRadius:'50px'
     }
 }
 export default ItemCount

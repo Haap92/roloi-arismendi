@@ -2,7 +2,6 @@ import React from 'react'
 import Item from '../item'
 
 const ItemList = ({productList}) => {
-    // const {productList}=props
   return (
     <div>
         <div style={styles.list}>
