@@ -1,12 +1,13 @@
 import React from "react";
 import sbag from "../../assets/images/sbag.svg";
+import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
   return (
     <div style={styles.buttonbag}>
-      <button>
+      <Link to='/cart'>
         <img src={sbag} alt="Bag Icon" style={styles.bag} />
-      </button>
+      </Link>
     </div>
   );
 };
