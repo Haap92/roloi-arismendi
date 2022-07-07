@@ -5,7 +5,7 @@ import { productsData } from '../../mocks/productsmock';
 import loadingGif from "../../assets/images/loading.gif"
 import { useParams } from 'react-router-dom'
 
-const Landing = ({greeting},{gimg}) => {
+const Landing = ({greeting}) => {
     const [products, setProducts]=useState([]);
     const [loading, setLoading]=useState(true);
 
