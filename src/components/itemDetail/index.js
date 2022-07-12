@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useContext, useState } from "react";
 import ItemCount from '../ItemCount';
-
+import { Link } from "react-router-dom";
+import { cartContext } from "../../context/CartContext";
 
 const ItemDetail = ({productDetail}) => {
-   
+
+  const [buyfinalized, setBuyFinalized] = useState(false);
+  const { addCartProduct } = useContext(cartContext);
+
+  const onAdd = (amount) => {
+    addCartProduct({ ...productDetail, cantidad: amount });
+    setBuyFinalized(true);
+  };
+
     return (
       <div style={styles.detailContainer}>
         <div style={styles.detailCard}>
@@ -12,8 +21,16 @@ const ItemDetail = ({productDetail}) => {
             <img style={styles.detailImg} src={productDetail.img} alt={productDetail.name}/>
             <div style={styles.detailDesc}>
               <p style={styles.detailPara}>{productDetail.description}</p>
-              <p style={styles.detailPrice}>Price:{productDetail.price} USD</p>
-              <ItemCount style={styles.detailCounter} name={productDetail.name} stock={productDetail.stock} initial={1} />
+              <p style={styles.detailPrice}>Price: {productDetail.price} USD</p>
+              <div>
+              {buyfinalized ? (
+                <Link to="/cart">
+                  <button style={styles.goToCart}>Go to Cart</button>
+                </Link>
+              ) : (
+                <ItemCount style={styles.detailCounter} name={productDetail.name} stock={productDetail.stock} initial={1} onAdd={onAdd} />
+                )}
+              </div>
             </div>
           </div> 
         </div>
@@ -82,8 +99,20 @@ const styles ={
     height: '40px',
     fontFamily: 'Roboto',
     fontSize: '24px',
-    marginLeft: '55px',
+    marginLeft: '85px',
     marginBottom: '5px'
-  }
+  },
+  goToCart:{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '234px',
+    height: '44px',
+    background: '#CD5C5C',
+    color: 'white',
+    textDecoration: 'none',
+    borderRadius:'50px',
+    marginLeft: '40px'
+}
 }
 export default ItemDetail;

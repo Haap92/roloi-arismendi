@@ -66,11 +66,11 @@ const styles = {
     },
     anchors: {  
       padding: 10 ,
-        textDecoration: 'none' ,
-        fontSize: '100%' ,
-        color: 'black' ,
-        fontFamily: 'Roboto',
-        fontWeight: 'bold'
+      textDecoration: 'none' ,
+      fontSize: '100%' ,
+      color: 'black' ,
+      fontFamily: 'Roboto',
+      fontWeight: 'bold'
     }
 } 
 

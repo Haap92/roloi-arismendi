@@ -66,15 +66,16 @@ const styles ={
         fontSize: '120%'
     },
     adding:{
-        marginBottom: '5%',
-        width: '60%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        width: '234px',
         height: '44px',
         background: '#CD5C5C',
         color: 'white',
-        borderRadius:'50px'
+        textDecoration: 'none',
+        borderRadius:'50px',
+        marginBottom: '20px'
     }
 }
 export default ItemCount
