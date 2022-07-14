@@ -9,7 +9,7 @@ const ItemDetail = ({productDetail}) => {
   const { addCartProduct } = useContext(cartContext);
 
   const onAdd = (amount) => {
-    addCartProduct({ ...productDetail, cantidad: amount });
+    addCartProduct({ ...productDetail, qty: amount });
     setBuyFinalized(true);
   };
 
@@ -76,7 +76,7 @@ const styles ={
   detailImg:{
     display: 'flex',
     width:'300px',
-    height: '300px',
+    
     marginLeft: '30px'
   },
   detailDesc:{

@@ -10,13 +10,13 @@ const CartCustomProvider = ({ children }) => {
   useEffect(() => {
     getQtyCartProducts();
   });
-
+console.log(productsCart)
   const addCartProduct = (product) => {
     if (isInCart(product.id)) {
       const found = productsCart.find((producto) => producto.id === product.id);
       const index = productsCart.indexOf(found);
       const aux = [...productsCart];
-      aux[index].cantidad += product.cantidad;
+      aux[index].qty += product.qty;
       setProductsCart(aux);
     } else {
       setProductsCart([...productsCart, product]);
@@ -28,12 +28,12 @@ const CartCustomProvider = ({ children }) => {
   };
 
   const isInCart = (id) => {
-    return productsCart.some((productCar) => productCar.id === id);
+    return productsCart.some((productCart) => productCart.id === id);
   };
 
   const getQtyCartProducts = () => {
     let qty = 0;
-    productsCart.forEach((productCart) => (qty += productCart.cantidad));
+    productsCart.forEach((productCart) => (qty += productCart.qty));
     setQtyProducts(qty);
   };
 
@@ -41,6 +41,17 @@ const CartCustomProvider = ({ children }) => {
     setProductsCart([]);
     setQtyProducts(0);
   };
+
+  const deleteItem = (id) => {
+    const filteredProducts = productsCart.filter((prod) => prod.id !== id);
+    setProductsCart(filteredProducts);
+};
+
+const calcTotal = () => {
+    productsCart.reduce(
+        (acum, actual) => acum + actual.price * actual.qty,
+        0)
+};
 
   return (
     <Provider
@@ -50,6 +61,8 @@ const CartCustomProvider = ({ children }) => {
         deleteCartProduct,
         clearCart,
         qtyProducts,
+        deleteItem,
+        calcTotal
       }}
     >
       {children};
