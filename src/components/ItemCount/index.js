@@ -6,21 +6,21 @@ const ItemCount = ({name, initial, stock, onAdd}) => {
         if (count < stock) {
             setCount((currentCount)=> currentCount+1);
         }else{
-            alert('Maximum stock for this product')
+            console.log('Maximum stock for this product')
         }
     }
     const decrementCount = () => {
         if (count > initial) {
             setCount((currentCount)=> currentCount-1);
         }else{
-            alert('Cant go below 1')
+            console.log('Cant go below 1')
         }
     }
     const addingBag = () =>{
         if(count < initial || count > stock) {
-            alert('Cant add '+ count + ' to bag')
+            console.log('Cant add '+ count + ' to bag')
         }else{
-            alert(count + ' '+ name + ' added to bag')
+            console.log(count + ' '+ name + ' added to bag')
             onAdd(count)
         }
     }

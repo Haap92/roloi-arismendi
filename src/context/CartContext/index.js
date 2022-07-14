@@ -8,7 +8,7 @@ const CartCustomProvider = ({ children }) => {
   const [qtyProducts, setQtyProducts] = useState(0);
 
   useEffect(() => {
-    getQtyCarProducts();
+    getQtyCartProducts();
   });
 
   const addCartProduct = (product) => {
@@ -31,7 +31,7 @@ const CartCustomProvider = ({ children }) => {
     return productsCart.some((productCar) => productCar.id === id);
   };
 
-  const getQtyCarProducts = () => {
+  const getQtyCartProducts = () => {
     let qty = 0;
     productsCart.forEach((productCart) => (qty += productCart.cantidad));
     setQtyProducts(qty);

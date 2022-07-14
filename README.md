@@ -17,3 +17,4 @@
 <p>C5: async/await Promises implemented on ItemListContainer and ItemListDetail Components.</p>
 <p>C6: ItemDetail component created.</p>
 <p>C7: Added react router to optimize app navigation.</p>
+<p>C8: Buy event implmentation on ItemDetail, added CartContext - Methods for Cart Component.</p>
