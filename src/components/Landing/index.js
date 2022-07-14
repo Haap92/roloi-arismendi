@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import gear from "../../assets/images/gear.svg";
 import ItemList from "../itemList";
 import { productsData } from '../../mocks/productsmock';
 import loadingGif from "../../assets/images/loading.gif"
 import { useParams } from 'react-router-dom'
 
-const ItemListContainer = () => {
+const Landing = ({greeting},{gimg}) => {
     const [products, setProducts]=useState([]);
     const [loading, setLoading]=useState(true);
 
@@ -24,7 +25,11 @@ const ItemListContainer = () => {
   return (
     <div>
        {loading ? <div style={styles.loading}><img style={styles.loadingGif}src={loadingGif} alt="loading" /></div>: 
-        <ItemList products={products}/> }       
+            <div style={styles.landing}>
+            <div><img style={styles.gear}src={gear} alt="gear" /></div>
+            <span style={styles.greeting}>{greeting}</span>
+        </div> }
+        {loading ? <p></p>: <ItemList products={products}/> }        
     </div>
   );
 };
@@ -39,6 +44,26 @@ const styles = {
     loadingGif:{
         display: 'flex',
         width: '10%'
+    },
+    landing:{ 
+        width: '100%',
+        height: 'calc(100vh - 60px)',
+        display: 'flex',
+        flexDirection: 'column' ,
+        justifyContent: 'center',
+        alignItems: 'center',
+        wrap: 'wrap'
+    },
+    gear: {
+        width: '100%',
+        padding: 10
+    },
+    greeting:{
+        fontSize: '100%' ,
+        color: 'black' ,
+        fontFamily: 'Roboto',
+        fontWeight: 'bold' ,
     }
 }
-export default ItemListContainer;
+
+export default Landing;

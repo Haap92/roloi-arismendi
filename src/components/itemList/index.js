@@ -1,11 +1,11 @@
 import React from 'react'
 import Item from '../item'
 
-const ItemList = ({productList}) => {
+const ItemList = ({products}) => {
   return (
     <div>
         <div style={styles.list}>
-        {productList.map((product)=><Item key={product.id} product={product}/>)}
+        {products.map((product)=><Item key={product.id} product={product}/>)}
         </div>
     </div>
   )
@@ -14,7 +14,7 @@ const ItemList = ({productList}) => {
 const styles={
     list:{
         display:'flex', 
-        justifyContent:'space-between', 
+        justifyContent:'center', 
         alignItems:'center', 
         flexWrap:'wrap'
     }

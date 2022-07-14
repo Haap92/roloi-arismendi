@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Item = ({product}) => {
@@ -10,7 +11,7 @@ const Item = ({product}) => {
         <img style={styles.images} src={img} alt= 'img'/>
         <p style={styles.paragraph}>{description}</p>
         <p style={styles.price}>Price: {price} USD</p>
-        <button style={styles.more}>More Information</button>
+        <Link to={`/detail/${product.id}`} style={styles.more}>More Info</Link>
     </div>
   )
 }
@@ -64,6 +65,7 @@ const styles ={
         height: '44px',
         background: '#CD5C5C',
         color: 'white',
+        textDecoration: 'none',
         borderRadius:'50px',
         marginBottom: '20px'
     }
