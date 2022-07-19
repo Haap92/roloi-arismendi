@@ -48,10 +48,13 @@ console.log(productsCart)
 };
 
 const calcTotal = () => {
-    productsCart.reduce(
-        (acum, actual) => acum + actual.price * actual.qty,
-        0)
+  let total = 0;
+  productsCart.forEach(
+    (productCart) => (total += productCart.qty * productCart.price)
+  );
+  return total
 };
+
 
   return (
     <Provider
