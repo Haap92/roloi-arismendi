@@ -19,3 +19,4 @@
 <p>C7: Added react router to optimize app navigation.</p>
 <p>C8: Buy event implmentation on ItemDetail, added CartContext - Methods for Cart Component.</p>
 <p>C9: CartContext methods applyed on Cart component. calcTotal calculates total payment.</p>
+<p>C10: More CartContext methods applyed on Cart component. Mocks promises have been replaced by a firebase database fetch.</p>
