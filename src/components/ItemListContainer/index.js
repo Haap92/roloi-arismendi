@@ -14,7 +14,7 @@ const ItemListContainer = () => {
     useEffect(() => {
      const productsQuery = categoryId
         ? query(collection(db, 'products'), where('category', '==', categoryId))
-        :collection(db, 'products')
+        : collection(db, 'products')
   
       getDocs(productsQuery)
         .then((result) => {
@@ -37,8 +37,9 @@ const ItemListContainer = () => {
 
   return (
     <div>
-       {loading ? <div style={styles.loading}><img style={styles.loadingGif}src={loadingGif} alt="loading" /></div>: 
-        <ItemList products={products}/> }       
+       {loading 
+       ? <div style={styles.loading}><img style={styles.loadingGif}src={loadingGif} alt="loading" /></div>
+       : <ItemList products={products}/> }       
     </div>
   );
 };

@@ -30,8 +30,9 @@ const ItemDetailContainer = () => {
     
   return (
     <div>
-       {loading ? <div style={styles.loading}><img style={styles.loadingGif}src={loadingGif} alt="loading" /></div>: 
-        <ItemDetail productDetail={productDetail}/> }        
+       {loading 
+       ? <div style={styles.loading}><img style={styles.loadingGif}src={loadingGif} alt="loading" /></div>
+       : <ItemDetail productDetail={productDetail}/> }        
     </div>
   );
 };
