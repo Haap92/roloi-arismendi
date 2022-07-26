@@ -6,6 +6,17 @@ import { cartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
   const { qtyProducts } = useContext(cartContext);
+
+  if (qtyProducts === 0) {
+    return (
+    <div style={styles.buttonbag}>
+    <Link to='/cart'>
+      <img src={sbag} alt="Bag Icon" style={styles.bag} />
+    </Link>
+    <p style={styles.cartQty}></p>
+  </div>
+  );
+} else{
   return (
     <div style={styles.buttonbag}>
       <Link to='/cart'>
@@ -14,6 +25,7 @@ const CartWidget = () => {
       <p style={styles.cartQty}>{qtyProducts}</p>
     </div>
   );
+};
 };
 
 const styles = {
