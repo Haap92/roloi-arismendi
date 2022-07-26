@@ -20,3 +20,4 @@
 <p>C8: Buy event implmentation on ItemDetail, added CartContext - Methods for Cart Component.</p>
 <p>C9: CartContext methods applyed on Cart component. calcTotal calculates total payment.</p>
 <p>C10: More CartContext methods applyed on Cart component. Mocks promises have been replaced by a firebase database fetch.</p>
+<p>C11: Added Sales component, modifications to all components that interact with sales, app general optimization.</p>
