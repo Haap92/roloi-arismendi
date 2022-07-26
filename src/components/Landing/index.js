@@ -1,52 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import gear from "../../assets/images/gear.svg";
-import ItemList from "../itemList";
-import loadingGif from "../../assets/images/loading.gif"
-import { useParams } from 'react-router-dom';
-import { db } from "../../firebase/firebase";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import ItemListContainer from '../ItemListContainer';
 
 const Landing = ({greeting}) => {
-    const [products, setProducts]=useState([]);
-    const [loading, setLoading]=useState(true);
-
-    const { categoryId } = useParams();
-
-    useEffect(() => {
-     const productsQuery = categoryId
-        ? query(collection(db, 'products'), where('category', '==', categoryId))
-        : collection(db, 'products')
-  
-      getDocs(productsQuery)
-        .then((result) => {
-          const listProducts = result.docs.map((product) => {
-            return {
-              id: product.id,
-              ...product.data(),
-            };
-          });
-          setProducts(listProducts);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }, [categoryId]);
-    console.log(products);
 
   return (
     <div>
-       {loading 
-       ? <div style={styles.loading}><img style={styles.loadingGif}src={loadingGif} alt="loading" /></div>
-       : <div style={styles.landing}>
-            <div><img style={styles.gear}src={gear} alt="gear" /></div>
-            <span style={styles.greeting}>{greeting}</span>
-         </div> }
-        {loading 
-        ? <p></p>
-        : <ItemList products={products}/> }        
+     <div style={styles.landing}>
+        <div><img style={styles.gear}src={gear} alt="gear" /></div>
+        <span style={styles.greeting}>{greeting}</span>
+     </div>
+     <div>
+        <ItemListContainer/>
+     </div>        
     </div>
   );
 };
