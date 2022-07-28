@@ -1,12 +1,24 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { cartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
+import Sale from "../Sale"
 
 const Cart = () => {
-    const { productsCart, deleteItem, calcTotal, clearCart } = useContext(cartContext);
+    const { productsCart, deleteItem, total, clearCart } = useContext(cartContext);
+    const [buyFinalized, setBuyFinalized] = useState(false);
+
+    const finishBuy = () => {
+        setBuyFinalized(true);
+    };
 
     if (productsCart.length === 0) {
-        return <h2 style={styles.empty}>Your cart it's empty.</h2>;
+        return <div style={styles.empty}>
+                    <h2>Your cart it's empty.</h2>
+                    <Link to="/products">
+                        <button style={styles.goToProducts}>Start Buying</button>
+                    </Link>
+                </div>;
     }
 
     return (
@@ -31,13 +43,25 @@ const Cart = () => {
                     <p> </p>
                 </div>
                 <div style={styles.totalClear}>
-                    <h3>Total:  {calcTotal()} $ </h3>
+                    <h3>Total:  {total} $ </h3>
                     <button style={styles.clearCart} onClick={() => clearCart()}>
                         Clear Cart
                     </button>
                 </div>
+                </div>
+            <div>
+          {buyFinalized ? (
+            <Sale/>
+          ) : (
+            <div style={ styles.order }>
+              <button onClick={finishBuy} style={styles.createOrder} >
+                Create Order
+              </button>
             </div>
+          )}
+
         </div>
+    </div>
     );
 };
 
@@ -46,7 +70,10 @@ const styles = {
     empty:{
         display: 'flex',
         justifyContent: 'center',
-        alignContet: 'center'
+        alignContet: 'center',
+        alignItems: 'center',
+        flexDirection: 'column', 
+        marginTop: '25px'
     },
     cartProduct:{
         display: 'flex',
@@ -104,6 +131,38 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignContet: 'center'
+    },
+    order:{
+        display: 'flex',
+        justifyContent: 'center',
+        alignContet: 'center',
+        alignItems: 'center'
+    },
+    createOrder:{
+        display:'flex',
+        width: '408px',
+        height: '44px',
+        background: '#CD5C5C',
+        color: 'white',
+        textDecoration: 'none',
+        borderRadius:'50px',
+        marginRight: '15px',
+        marginTop:'55px',
+        justifyContent: 'center',
+        alignContet: 'center',
+        alignItems: 'center'
+    },
+    goToProducts:{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '234px',
+        height: '44px',
+        background: '#CD5C5C',
+        color: 'white',
+        textDecoration: 'none',
+        borderRadius:'50px',
+        marginBottom: '20px'
     }
 }
 

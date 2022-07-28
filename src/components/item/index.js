@@ -11,10 +11,19 @@ const Item = ({product}) => {
         <img style={styles.images} src={img} alt= 'img'/>
         <p style={styles.paragraph}>{description}</p>
         <p style={styles.price}>Price: {price} USD</p>
-        <Link to={`/detail/${product.id}`} style={styles.more}>More Info</Link>
+        <div>
+        {product.stock === 0 ? (
+            <div style={ styles.na}>
+              <p>Product not Available</p>
+            </div>
+          ) : (
+            <div>
+                <Link to={`/detail/${product.id}`} style={styles.more}>More Info</Link>
+            </div>
+          )}
+         </div>
     </div>
-  )
-}
+  )}
 
 const styles ={
     itemCard:{
@@ -68,6 +77,13 @@ const styles ={
         textDecoration: 'none',
         borderRadius:'50px',
         marginBottom: '20px'
+    },
+    na:{
+        display: 'flex', 
+        textAlign: 'center',
+        fontFamily: 'Roboto',
+        fontWeight: 'bold',
+        color:'red',
     }
 }
 export default Item

@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Swal from "sweetalert2";
+
 
 const ItemCount = ({name, initial, stock, onAdd}) => {
     const [count, setCount]=useState(initial)
@@ -6,21 +8,37 @@ const ItemCount = ({name, initial, stock, onAdd}) => {
         if (count < stock) {
             setCount((currentCount)=> currentCount+1);
         }else{
-            console.log('Maximum stock for this product')
+            Swal.fire({
+                text: `Maximum stock for this product`,
+                confirmButtonColor: "#CD5C5C"
+              })
         }
     }
     const decrementCount = () => {
         if (count > initial) {
             setCount((currentCount)=> currentCount-1);
         }else{
-            console.log('Cant go below 1')
+            Swal.fire({
+                text: `Can't go below 1`,
+                confirmButtonColor: "#CD5C5C"
+              })
         }
     }
     const addingBag = () =>{
         if(count < initial || count > stock) {
-            console.log('Cant add '+ count + ' to bag')
+            Swal.fire({
+                icon: "error",
+                title: `ERROR`,
+                text: `Can't Add ${count} to bag`,
+                confirmButtonColor: "#CD5C5C"
+              })
         }else{
-            console.log(count + ' '+ name + ' added to bag')
+            Swal.fire({
+                icon: "success",
+                title: `${name}`,
+                text: `${count} Added to bag`,
+                confirmButtonColor: "#CD5C5C"
+              })
             onAdd(count)
         }
     }

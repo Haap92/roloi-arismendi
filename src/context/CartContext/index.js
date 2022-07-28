@@ -6,10 +6,15 @@ const { Provider } = cartContext;
 const CartCustomProvider = ({ children }) => {
   const [productsCart, setProductsCart] = useState([]);
   const [qtyProducts, setQtyProducts] = useState(0);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     getQtyCartProducts();
   });
+  useEffect(() => {
+    getTotal();
+  });
+
 console.log(productsCart)
   const addCartProduct = (product) => {
     if (isInCart(product.id)) {
@@ -40,6 +45,7 @@ console.log(productsCart)
   const clearCart = () => {
     setProductsCart([]);
     setQtyProducts(0);
+    setTotal(0);
   };
 
   const deleteItem = (id) => {
@@ -47,12 +53,12 @@ console.log(productsCart)
     setProductsCart(filteredProducts);
 };
 
-const calcTotal = () => {
+const getTotal = () => {
   let total = 0;
   productsCart.forEach(
     (productCart) => (total += productCart.qty * productCart.price)
   );
-  return total
+  setTotal(total)
 };
 
 
@@ -65,7 +71,7 @@ const calcTotal = () => {
         clearCart,
         qtyProducts,
         deleteItem,
-        calcTotal
+        total
       }}
     >
       {children};
