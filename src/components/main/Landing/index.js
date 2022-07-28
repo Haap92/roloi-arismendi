@@ -1,6 +1,6 @@
 import React from 'react';
 import gear from "../../assets/images/gear.svg";
-import ItemListContainer from '../ItemListContainer';
+import ItemListContainer from '../../../containers/ItemListContainer';
 
 const Landing = ({greeting}) => {
 

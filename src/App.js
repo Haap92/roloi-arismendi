@@ -1,10 +1,10 @@
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import Cart from "./components/Cart";
-import Sale from "./components/Sale";
+import NavBar from "./components/main/NavBar";
+import ItemListContainer from "./containers/ItemListContainer";
+import ItemDetailContainer from "./containers/ItemDetailContainer";
+import Cart from "./components/sales/Cart";
+import Sale from "./components/sales/Sale";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Landing from "./components/Landing";
+import Landing from "./components/main/Landing";
 import CartCustomProvider from "./context/CartContext";
 
 function App() {
