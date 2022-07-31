@@ -1,5 +1,5 @@
 import React from 'react';
-import gear from "../../assets/images/gear.svg";
+import gear from "../../../assets/images/gear.svg";
 import ItemListContainer from '../../../containers/ItemListContainer';
 
 const Landing = ({greeting}) => {

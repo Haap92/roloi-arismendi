@@ -1,8 +1,8 @@
 import React from "react";
-import sbag from "../../assets/images/sbag.svg";
+import sbag from "../../../assets/images/sbag.svg";
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
-import { cartContext } from "../../context/CartContext";
+import { cartContext } from "../../../context/CartContext";
 
 const CartWidget = () => {
   const { qtyProducts } = useContext(cartContext);

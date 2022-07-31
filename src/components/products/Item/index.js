@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom'
 
 
 const Item = ({product}) => {
-  const {img, name, description, price}= product
+  const {img, name, price}= product
 
   return (
     <div style={styles.itemCard}>
         <h3 style={styles.names}>{name}</h3>
         <img style={styles.images} src={img} alt= 'img'/>
-        <p style={styles.paragraph}>{description}</p>
         <p style={styles.price}>Price: {price} USD</p>
         <div>
         {product.stock === 0 ? (
@@ -17,8 +16,8 @@ const Item = ({product}) => {
               <p>Product not Available</p>
             </div>
           ) : (
-            <div>
-                <Link to={`/detail/${product.id}`} style={styles.more}>More Info</Link>
+            <div style={styles.more}>
+                <Link to={`/detail/${product.id}`} style={styles.morea}>More Info</Link>
             </div>
           )}
          </div>
@@ -31,8 +30,9 @@ const styles ={
         width: '22%' ,
         display: 'flex',
         flexDirection: 'column' ,
-        justifyContent: 'space-between',
-        alignItems: 'center',  
+        justifyContent: 'space-evenly',
+        alignItems: 'center', 
+        alignContent: 'center',
         background: '#D9BEBE', 
         MarginTop: '10%',
         margin: '1%',
@@ -41,6 +41,7 @@ const styles ={
         boxShadow: 'inset 0 0 5px black'
     },
     names:{
+        display: 'flex', 
         fontFamily: 'Roboto',
         fontWeight: 'bold',
         textAlign: 'center',
@@ -48,13 +49,8 @@ const styles ={
         padding:'12px',
         marginBottom: '5px'
     },
-    paragraph:{
-        width: '80%',
-        height: '40px',
-        textAlign: 'center',
-        fontFamily: 'Roboto',
-    },
     price:{
+        display: 'flex', 
         width: '55%',
         height: '22px',
         textAlign: 'center',
@@ -62,6 +58,7 @@ const styles ={
         fontWeight: 'bold' 
     },
     images:{
+        display: 'flex', 
         width:'65%',
         height: '150px',
         marginBottom: '10px'
@@ -70,13 +67,21 @@ const styles ={
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '234px',
+        width: '100%',
         height: '44px',
         background: '#CD5C5C',
-        color: 'white',
-        textDecoration: 'none',
         borderRadius:'50px',
         marginBottom: '20px'
+    },
+    morea:{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '44px',
+        color: 'white',
+        textDecoration: 'none',
+        margin: '20px'
     },
     na:{
         display: 'flex', 

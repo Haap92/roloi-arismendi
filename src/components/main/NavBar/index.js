@@ -1,6 +1,6 @@
 import React from 'react';
-import CartWidget from "../../CartWidget";
-import logo from "../../assets/images/logo.svg"
+import CartWidget from "../../main/CartWidget";
+import logo from "../../../assets/images/logo.svg"
 import { Link } from 'react-router-dom'
 const menuItems = [
     {

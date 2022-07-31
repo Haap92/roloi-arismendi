@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import ItemCount from '../ItemCount';
 import { Link } from "react-router-dom";
-import { cartContext } from "../../context/CartContext";
+import { cartContext } from "../../../context/CartContext";
 
 const ItemDetail = ({productDetail}) => {
 
@@ -112,7 +112,7 @@ const styles ={
     color: 'white',
     textDecoration: 'none',
     borderRadius:'50px',
-    marginLeft: '40px'
+    marginLeft: '30px'
 }
 }
 export default ItemDetail;
