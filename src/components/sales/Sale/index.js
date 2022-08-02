@@ -111,7 +111,8 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        alignContent: 'center'
+        alignContent: 'center',
+        paddingBottom: 200
     },
     form:{
         display: 'flex',
@@ -124,14 +125,15 @@ const styles = {
         display:'flex',
         width: '108px',
         height: '44px',
-        background: '#CD5C5C',
-        color: 'white',
+        background: '#932D30',
+        color: '#E6E8E5',
         textDecoration: 'none',
         borderRadius:'50px',
         justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
-        marginTop: '20px'
+        marginTop: '20px',
+        cursor:'pointer'
     }
 }
 export default Sale;

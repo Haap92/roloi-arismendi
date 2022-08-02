@@ -14,9 +14,9 @@ const Cart = () => {
 
     if (productsCart.length === 0) {
         return <div style={styles.empty}>
-                    <h2>Your cart it's empty.</h2>
-                    <Link to="/products">
-                        <button style={styles.goToProducts}>Start Buying</button>
+                    <h2>YOUR CART IS EMPTY.</h2>
+                    <Link to="/products" style={styles.goToProducts}>
+                       START BUYING
                     </Link>
                 </div>;
     }
@@ -29,9 +29,9 @@ const Cart = () => {
                         <div>
                             <img src={product.img} width="70px" alt="product" />
                         </div>
-                        <h2> {product.name} </h2>
-                        <h2> Price: {product.price}$ </h2>
-                        <h2> Qty: {product.qty} </h2>
+                        <h2 style={styles.name}> {product.name} </h2>
+                        <h2 style={styles.price}> Price {product.price}$ </h2>
+                        <h2 style={styles.qty}> Qty {product.qty} </h2>
                         <button style={styles.deleteProduct} onClick={() => deleteItem(product.id)}>
                             Delete
                         </button>
@@ -43,7 +43,7 @@ const Cart = () => {
                     <p> </p>
                 </div>
                 <div style={styles.totalClear}>
-                    <h3>Total:  {total} $ </h3>
+                    <h3 style={styles.total}>Total:  {total} $ </h3>
                     <button style={styles.clearCart} onClick={() => clearCart()}>
                         Clear Cart
                     </button>
@@ -69,6 +69,7 @@ const styles = {
 
     empty:{
         display: 'flex',
+        fontFamily: 'roboto',
         justifyContent: 'center',
         alignContet: 'center',
         alignItems: 'center',
@@ -77,39 +78,57 @@ const styles = {
     },
     cartProduct:{
         display: 'flex',
-        border: '2px solid #CD5C5C',
+        border: '2px solid #932D30',
         margin: '10px',
         padding: '10px',
         justifyContent: 'space-between',
         alignItems: 'center'
     },
+    name:{
+        textAlign: 'left',
+        width: '100%',
+        paddingLeft: 25
+    },
+    price:{
+        textAlign:'center'
+    },
+    qty:{
+        textAlign: 'center',
+        paddingRight: 15
+    },
     deleteProduct:{
         display:'flex',
         width: '66px',
         height: '44px',
-        background: '#CD5C5C',
-        color: 'white',
+        background: '#932D30',
+        color: '#E6E8E5',
         textDecoration: 'none',
         borderRadius:'50px',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        cursor:'pointer'
+    },
+    total:{
+        textAlign: 'right',
+        paddingRight: 30
     },
     clearCart:{
         display:'flex',
         width: '108px',
         height: '44px',
-        background: '#CD5C5C',
-        color: 'white',
+        background: '#932D30',
+        color: '#E6E8E5',
         textDecoration: 'none',
         borderRadius:'50px',
         justifyContent: 'center',
         alignItems: 'center',
-        marginRight: '15px'
+        marginRight: '15px',
+        cursor:'pointer'
     },
     totalClear:{
         display: 'flex',
         width: '45%',
-        justifyContent: 'space-between',
+        justifyContent: 'right',
         alignItems: 'center'
     },
     h3Total:{
@@ -136,21 +155,23 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignContet: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingBottom: 200
     },
     createOrder:{
         display:'flex',
         width: '408px',
         height: '44px',
-        background: '#CD5C5C',
-        color: 'white',
+        background: '#932D30',
+        color: '#E6E8E5',
         textDecoration: 'none',
         borderRadius:'50px',
         marginRight: '15px',
         marginTop:'55px',
         justifyContent: 'center',
         alignContet: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        cursor:'pointer'
     },
     goToProducts:{
         display: 'flex',
@@ -158,8 +179,8 @@ const styles = {
         alignItems: 'center',
         width: '234px',
         height: '44px',
-        background: '#CD5C5C',
-        color: 'white',
+        background: '#932D30',
+        color: '#E6E8E5',
         textDecoration: 'none',
         borderRadius:'50px',
         marginBottom: '20px'

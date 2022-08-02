@@ -30,7 +30,7 @@ const styles = {
     },
     landing:{ 
         width: '100%',
-        height: 'calc(100vh - 60px)',
+        height: 'calc(100vh - 8px)',
         display: 'flex',
         flexDirection: 'column' ,
         justifyContent: 'center',

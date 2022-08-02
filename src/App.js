@@ -6,6 +6,7 @@ import Sale from "./components/sales/Sale";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Landing from "./components/main/Landing";
 import CartCustomProvider from "./context/CartContext";
+import Footer from "./components/main/Footer";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path='/cart' element ={<Cart/>} />
           <Route path="/sales" element={<Sale/>} />
         </Routes>
-      </CartCustomProvider>
+      <Footer />
+    </CartCustomProvider>
     </BrowserRouter>
   ); 
 }

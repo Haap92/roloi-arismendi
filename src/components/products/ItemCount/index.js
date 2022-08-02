@@ -10,7 +10,7 @@ const ItemCount = ({name, initial, stock, onAdd}) => {
         }else{
             Swal.fire({
                 text: `Maximum stock for this product`,
-                confirmButtonColor: "#CD5C5C"
+                confirmButtonColor: "#932D30"
               })
         }
     }
@@ -20,7 +20,7 @@ const ItemCount = ({name, initial, stock, onAdd}) => {
         }else{
             Swal.fire({
                 text: `Can't go below 1`,
-                confirmButtonColor: "#CD5C5C"
+                confirmButtonColor: "#932D30"
               })
         }
     }
@@ -30,14 +30,14 @@ const ItemCount = ({name, initial, stock, onAdd}) => {
                 icon: "error",
                 title: `ERROR`,
                 text: `Can't Add ${count} to bag`,
-                confirmButtonColor: "#CD5C5C"
+                confirmButtonColor: "#932D30"
               })
         }else{
             Swal.fire({
                 icon: "success",
                 title: `${name}`,
                 text: `${count} Added to bag`,
-                confirmButtonColor: "#CD5C5C"
+                confirmButtonColor: "#932D30"
               })
             onAdd(count)
         }
@@ -46,11 +46,11 @@ const ItemCount = ({name, initial, stock, onAdd}) => {
   return (
     <div style={styles.ItemCounter}>
         <div style={styles.buttonbar}>
-            <button style={styles.minus} onClick={decrementCount}>-</button>
+            <button style={styles.minus} onClick={decrementCount}>- </button>
             <span style={styles.counter}>{count}</span>
             <button style={styles.plus} onClick={incrementCount}>+</button>
         </div>
-        <button style={styles.adding} onClick={addingBag}>Add to Bag</button>
+        <button style={styles.adding} onClick={addingBag}>ADD TO BAG</button>
     </div>
   )
 }
@@ -73,12 +73,22 @@ const styles ={
         alignItems: 'center'
     },
     plus:{
-        backgroundColor: 'green',
-        color:'white',
+        display: 'flex',
+        backgroundColor: '#932D30',
+        color:'#E6E8E5',
+        fontWeight: 'bold',
+        fontSize: '20px',
+        borderRadius: '50px',
+        cursor:'pointer'
     },
     minus:{
-        backgroundColor: 'red',
-        color:'white',
+        display: 'flex',
+        backgroundColor: '#932D30',
+        color:'#E6E8E5',
+        fontWeight: 'bold',
+        fontSize: '20px',
+        borderRadius: '60px',
+        cursor:'pointer'
     },
     counter:{
         fontSize: '120%'
@@ -89,11 +99,12 @@ const styles ={
         alignItems: 'center',
         width: '234px',
         height: '44px',
-        background: '#CD5C5C',
-        color: 'white',
+        background: '#932D30',
+        color: '#E6E8E5',
         textDecoration: 'none',
         borderRadius:'50px',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        cursor:'pointer'
     }
 }
 export default ItemCount

@@ -7,34 +7,51 @@ const ItemDetail = ({productDetail}) => {
 
   const [buyfinalized, setBuyFinalized] = useState(false);
   const { addCartProduct } = useContext(cartContext);
+  
 
   const onAdd = (amount) => {
     addCartProduct({ ...productDetail, qty: amount });
     setBuyFinalized(true);
   };
+console.log(productDetail)
 
     return (
       <div style={styles.detailContainer}>
-        <div style={styles.detailCard}>
-        <h2 style={styles.detailTitle}>{productDetail.name}</h2>
           <div style={styles.detailRow}>
             <img style={styles.detailImg} src={productDetail.img} alt={productDetail.name}/>
-            <div style={styles.detailDesc}>
-              <p style={styles.detailPara}>{productDetail.description}</p>
-              <p style={styles.detailPrice}>Price: {productDetail.price} USD</p>
-              <div>
-              {buyfinalized ? (
-                <Link to="/cart">
-                  <button style={styles.goToCart}>Go to Cart</button>
-                </Link>
-              ) : (
-                <ItemCount style={styles.detailCounter} name={productDetail.name} stock={productDetail.stock} initial={1} onAdd={onAdd} />
+            <div style={styles.detailColumn}>
+              <h2 style={styles.detailTitle}>{productDetail.name}</h2>
+              <div style={styles.detailDesc}>
+                <span style={styles.detailPrice}>Price: {productDetail.price} USD</span>
+                <div>
+                {buyfinalized ? (
+                  <Link to="/cart">
+                    <button style={styles.goToCart}>Go to Cart</button>
+                  </Link>
+                ) : (
+                  <ItemCount style={styles.detailCounter} name={productDetail.name} stock={productDetail.stock} initial={1} onAdd={onAdd} />
                 )}
+                </div>
               </div>
+            </div> 
+          </div>
+        <div style={styles.detailRow}>
+          <div style={styles.detailColumn}>
+            <div>
+              <h3 style={styles.detailTitle}>DESCRIPTION</h3>
+              <p style={styles.detailPara}>{productDetail.description}</p>
             </div>
-          </div> 
+            <div>
+              <h3 style={styles.detailTitle}>SPECIFICATIONS</h3>
+              <p style={styles.detailPara}>{productDetail.specifications}</p>
+            </div>
+          </div>
+          <div>
+            <img style={styles.detailImg} src={productDetail.images} alt={productDetail.name}/>
+          </div>
         </div>
       </div>
+    
       )
     }
 
@@ -42,24 +59,11 @@ const styles ={
 
   detailContainer:{
     display: 'flex',
-    flexDirection: 'row' ,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-
-  detailCard:{
-    height: '500px' ,
-    width: '600px' ,
-    display: 'flex',
     flexDirection: 'column' ,
     justifyContent: 'space-evenly',
-    alignItems: 'center',  
-    background: '#D9BEBE', 
-    MarginTop: '10%',
-    margin: '1%',
-    border: '1px',
-    borderRadius:'30px',
-    boxShadow: 'inset 0 0 5px black'
+    alignItems: 'center',
+    marginTop: '15px',
+    padding: 10
   },
   detailTitle:{
     display: 'flex',
@@ -71,18 +75,24 @@ const styles ={
   },
   detailRow:{
     display: 'flex',
-    flexDirection: 'row' 
+    flexDirection: 'row',
+    justifyContent: 'space-evenly'
+  },
+  detailColumn:{
+    display: 'flex',
+    flexDirection: 'column' 
   },
   detailImg:{
     display: 'flex',
-    width:'300px',
-    
+    width:'50%',    
     marginLeft: '30px'
   },
   detailDesc:{
     display: 'flex',
-    flexDirection: 'column' ,
-    paddinTop: '10px'
+    paddinTop: '10px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   detailPara:{
     display: 'flex',
@@ -95,11 +105,9 @@ const styles ={
   },
   detailPrice:{
     display: 'flex',
-    width: '80%',
     height: '40px',
     fontFamily: 'Roboto',
     fontSize: '24px',
-    marginLeft: '85px',
     marginBottom: '5px'
   },
   goToCart:{

@@ -4,10 +4,8 @@ import Item from '../Item'
 const ItemList = ({products}) => {
   
   return (
-    <div>
-        <div style={styles.list}>
-        {products.map((product)=><Item key={product.id} product={product}/>)}
-        </div>
+    <div style={styles.list}>
+      {products.map((product)=><Item key={product.id} product={product}/>)}
     </div>
   )
 }
@@ -17,7 +15,11 @@ const styles={
         display:'flex', 
         justifyContent:'center', 
         alignItems:'center', 
-        flexWrap:'wrap'
+        flexWrap:'wrap',
+        gap: '2rem',
+        margin: '2rem 2vw',
+        listStyleType: 'none',
+        paddingBottom: 200
     }
 }
 export default ItemList

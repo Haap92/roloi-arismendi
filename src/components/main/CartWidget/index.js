@@ -42,18 +42,19 @@ const styles = {
       width: '2rem',
       height: '2rem',
       padding: 10,
-      marginRight: '7px'
+      marginRight: '32px'
     },
     bag: {
       display: 'flex',
       width: '35px',
+      marginRight: '10px'
     },
     cartQty: {
       display: 'flex',
-      color: 'gray',
+      color: '#E6E8E5',
       fontWeight: 'bold',
       fontSize: '1.8rem',
-      marginLeft: '3px'
+      marginRight: '32px'
     }
 }
 export default CartWidget;
