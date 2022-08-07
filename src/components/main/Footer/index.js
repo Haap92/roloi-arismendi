@@ -4,6 +4,7 @@ import GH from "../../../assets/images/GH.png";
 import LI from "../../../assets/images/LI.png";
 import { Link } from 'react-router-dom';
 import Categories from '../Categories';
+import Newsletter from '../Newsletter'
 
 const Footer = () => {
     return(
@@ -27,12 +28,7 @@ const Footer = () => {
                         </div>
                     </section>
                     <section style={styles.footSearch}>
-                        <div style={styles.footSearching}>
-                            <input placeholder='Update in your inbox..' style={styles.footBar}></input>
-                            <button style={styles.go}>
-                                GO
-                            </button>
-                        </div>
+                        <Newsletter />
                         <div style={styles.legal}>
                             Copyright 2022. All Rights Reserved
                         </div>
@@ -110,31 +106,6 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'center',
         margin: '20px 70px 0 0 '
-    },
-    footSearching:{
-        dipslay: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginTop: '20px'
-    },
-    footBar:{
-        dipslay: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        background: '#FFFFFF',
-        borderRadius: '50px',
-        padding: 10,
-        margin: '10px'
-    },
-    go:{
-        dipslay: 'flex',
-        flexDirection: 'column',
-        fontWeight: 'bold',
-        background: '#932D30',
-        borderRadius: '50px',
-        padding: 10,
-        color: '#E6E8E5',
-        cursor:'pointer'
     },
     legal:{
         display: 'flex',

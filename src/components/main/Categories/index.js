@@ -18,7 +18,7 @@ const Categories = () => {
                 )
             )
     }, []);
-        console.log(categories)
+    
     return (
         <div>
         {categories.map((cat) => (
