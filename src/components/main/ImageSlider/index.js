@@ -71,6 +71,8 @@ const styles = {
         postion: 'relative',
         justifyContent: 'center',
         alignItems: 'center',
+        paddinTop: 5,
+        paddingBottom: 5
     },
     image:{
         width: '1000px',
