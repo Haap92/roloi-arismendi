@@ -7,6 +7,8 @@ const ItemDetail = ({productDetail}) => {
 
   const [buyfinalized, setBuyFinalized] = useState(false);
   const [current, setCurrent] = useState(0);
+  const [showDesc, setShowDesc] = useState(true);
+  const [showSpec, setShowSpec] = useState(false);
   const { addCartProduct } = useContext(cartContext);
   
 
@@ -28,7 +30,7 @@ const length = imgs.length
 
     if (!Array.isArray(imgs) || imgs.length <= 0 ) {
         return null
-    }
+    };
     return (
       <div style={styles.detailContainer}>
           <div style={styles.detailRow}>
@@ -64,14 +66,14 @@ const length = imgs.length
         <div style={styles.detailRow}>
           <div style={styles.detailColumn}>
             <div>
-              <h3 style={styles.detailTitle}>DESCRIPTION                   ▼</h3>
-              <p style={styles.detailPara}>{productDetail.description}</p>
+              <h3 onClick={() => setShowDesc(!showDesc)} style={styles.detailTitle}>{showDesc ? `DESCRIPTION ►` : `DESCRIPTION ▼`}</h3>
+              <p className={showDesc ? "show-element" : null} style={styles.detailPara}>{showDesc && <p>{productDetail.description}</p>}</p>
             </div>
             <div>
-              <h3 style={styles.detailTitle}>SPECIFICATIONS                ▼</h3>
-              <p style={styles.detailColumn}>{specs.map((item)=>
+            <h3 onClick={() => setShowSpec(!showSpec)} style={styles.detailTitle}>{showSpec ? `SPECIFICATIONS ►` : `SPECIFICATIONS ▼`}</h3>
+              <p className={showSpec ? "show-element" : null}  style={styles.detailColumn}>{showSpec && <div>{specs.map((item)=>
                 <li style={styles.detailPara} key={`{item}`}>{item}</li>
-              )}</p>
+              )}</div>}</p>
             </div>
           </div>
           <div style={styles.imgDetailColumn}>
@@ -114,7 +116,8 @@ const styles ={
     fontWeight: 'bold',
     textAlign: 'left',
     fontSize: '28px',
-    paddinTop: '10px'
+    paddinTop: '10px',
+    cursor: 'pointer'
   },
   detailRow:{
     display: 'flex',
@@ -132,7 +135,8 @@ const styles ={
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '100%'
+    width: '100%',
+    marginTop: '40px'
   },
   slider:{
     width: '500px',
