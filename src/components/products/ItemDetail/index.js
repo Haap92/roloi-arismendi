@@ -35,7 +35,7 @@ const length = imgs.length
       <div style={styles.detailContainer}>
           <div style={styles.detailRow}>
           <section style={styles.slider}>
-            <div style={styles.lefttArrow} onClick={prevSlide}>◄</div>
+            <div style={styles.lefttArrow} onClick={prevSlide}>‹</div>
             {imgs.map((slide,index)=> {
                 return(
                     <div
@@ -45,7 +45,7 @@ const length = imgs.length
                     </div>
                 ) 
             })}
-            <div style={styles.rightArrow} onClick={nextSlide}>►</div>
+            <div style={styles.rightArrow} onClick={nextSlide}>›</div>
         </section>
             <div style={styles.titleColumn}>
               <h2 style={styles.productTitle}>{productDetail.name}</h2>
@@ -157,7 +157,7 @@ const styles ={
       postion: 'absolute',
       top: '50%',
       right: '32px',
-      fontSize: '3rem',
+      fontSize: '5rem',
       color: '#932D30',
       zIndex: '10',
       cursor: 'pointer',
@@ -167,7 +167,7 @@ const styles ={
       postion: 'absolute',
       top: '50%',
       left: '32px',
-      fontSize: '3rem',
+      fontSize: '5rem',
       color: '#932D30',
       zIndex: '10',
       cursor: 'pointer',

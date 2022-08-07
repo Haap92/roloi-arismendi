@@ -13,10 +13,10 @@ const Footer = () => {
                     <section style={styles.footColumn}>
                         
                         <div style={styles.footSocialRow}>
-                        <Link to={{pathname:`https://github.com/Haap92`}} target="_blank" ><img style={styles.logoGH} src={GH} alt="Github Haap92" />
-                        </Link>
-                        <Link to={{pathname:`https://www.linkedin.com/in/hernanarismendi/`}} target="_blank" ><img style={styles.logoLI} src={LI} alt="Roloi" />
-                        </Link> 
+                        <a href='https://github.com/Haap92' rel='noreferrer' target="_blank" ><img style={styles.logoGH} src={GH} alt="Github Haap92" />
+                        </a>
+                        <a href='https://www.linkedin.com/in/hernanarismendi/' rel='noreferrer' target="_blank" ><img style={styles.logoLI} src={LI} alt="Roloi" />
+                        </a> 
                         </div>
                     </section>
                     <section style={styles.center}>
@@ -78,7 +78,7 @@ const styles = {
         display: 'flex',
         width: 'auto',
         height: '90px',
-        padding: 10
+        padding: 4
     },
     footColumn:{
         dipslay: 'flex',
