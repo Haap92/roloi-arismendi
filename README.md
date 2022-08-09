@@ -1,15 +1,15 @@
-#eCommerce: Roloi Store
+# eCommerce: Roloi Store
 
-###Final Project in React for CODERHOUSE.
+### Final Project in React for CODERHOUSE.
 
-######Virtual shop specialized on watches.
+###### Virtual shop specialized on watches.
 
 ![Roloi Store Gif](https://media3.giphy.com/media/TIoGdr8UnfDNlR6oYQ/giphy.gif)
 
 [Deploy](https://roloistore.vercel.app/)
 ---
 
-###Technologies & Languages:
+### Technologies & Languages:
 - [ReactJS](https://es.reactjs.org/) - Version: 18.2.0.
 - [NodeJS](https://nodejs.org/es/) - Version: 14.16.1.
 - [React-Router](https://v5.reactrouter.com/web/guides/quick-start) - Version: 6.3.0.
@@ -17,7 +17,7 @@
 
 ---
 
-###Log by Branches:
+### Log by Branches:
 - C1: Project Inizialitation.
 - C2: NavBar & Cart widget creation.
 - C3: Landing page implemented.
