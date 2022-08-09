@@ -13,6 +13,7 @@
 - [ReactJS](https://es.reactjs.org/) - Version: 18.2.0.
 - [NodeJS](https://nodejs.org/es/) - Version: 14.16.1.
 - [React-Router](https://v5.reactrouter.com/web/guides/quick-start) - Version: 6.3.0.
+- [Sweetalert2](https://sweetalert2.github.io/) - Version: 11.4.24.
 - CSS-in-JS.
 
 ---
