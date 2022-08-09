@@ -10,9 +10,9 @@
 ---
 
 ###Technologies & Languages:
-- [ReactJS] (https://es.reactjs.org/) - Version: 18.2.0.
-- [NodeJS] (https://nodejs.org/es/) - Version: 14.16.1.
-- [React-Router] (https://v5.reactrouter.com/web/guides/quick-start) - Version: 6.3.0.
+- [ReactJS](https://es.reactjs.org/) - Version: 18.2.0.
+- [NodeJS](https://nodejs.org/es/) - Version: 14.16.1.
+- [React-Router](https://v5.reactrouter.com/web/guides/quick-start) - Version: 6.3.0.
 - CSS-in-JS.
 
 ---
