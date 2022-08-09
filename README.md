@@ -4,7 +4,7 @@
 
 ###### A non responsive desktop app e-commerce for the sale of vintage wrist watches developed on ReactJS.
 
-![Roloi Store Gif](https://media3.giphy.com/media/TIoGdr8UnfDNlR6oYQ/giphy.gif)
+[![Roloi Store Gif](https://media3.giphy.com/media/TIoGdr8UnfDNlR6oYQ/giphy.gif)](https://roloistore.vercel.app/)
 
 ### [Deploy](https://roloistore.vercel.app/)
 
