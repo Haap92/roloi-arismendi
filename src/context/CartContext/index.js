@@ -16,7 +16,6 @@ const CartCustomProvider = ({ children }) => {
     getTotal();
   });
 
-console.log(productsCart)
   const addCartProduct = (product) => {
     if (isInCart(product.id)) {
       const found = productsCart.find((producto) => producto.id === product.id);
