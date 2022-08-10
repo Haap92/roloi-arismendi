@@ -27,7 +27,7 @@ const ItemListContainer = () => {
           setProducts(listProducts);
         })
         .catch((error) => {
-          console.log(error);
+          return error
         })
         .finally(() => {
           setLoading(false);
