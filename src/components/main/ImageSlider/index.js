@@ -21,7 +21,7 @@ const ImageSlider = () => {
                 )
             )
             .catch((error) => {
-                console.log(error);
+                return error
               })
               .finally(() => {
                 setLoading(false);
